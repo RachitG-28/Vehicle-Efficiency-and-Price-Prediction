@@ -15,13 +15,11 @@ TARGET_COLUMN = "mpg"
 # CLEANING FUNCTION
 # -------------------------------
 def clean_data(df):
+    if "car name" in df.columns:
+        df = df.drop(columns=["car name"])
 
     for col in df.columns:
-        if df[col].dtype == 'object':
-            try:
-                df[col] = pd.to_numeric(df[col])
-            except:
-                pass
+        df[col] = pd.to_numeric(df[col], errors='coerce')
 
     df = df.dropna(subset=[TARGET_COLUMN])
 
@@ -29,7 +27,6 @@ def clean_data(df):
     X = df.drop(TARGET_COLUMN, axis=1)
 
     X = X.fillna(X.median(numeric_only=True))
-    X = pd.get_dummies(X, drop_first=True)
 
     return X, y
 
@@ -40,7 +37,7 @@ df = pd.read_csv("auto-mpg.csv")
 
 X, y = clean_data(df)
 
-model_columns = X.columns
+model_columns = list(X.columns)
 
 # -------------------------------
 # TRAIN TEST SPLIT
@@ -78,4 +75,4 @@ with open("model.pkl", "wb") as f:
 with open("columns.pkl", "wb") as f:
     pickle.dump(model_columns, f)
 
-print("Model trained and saved successfully!")
+print("Model trained and saved successfully!")
