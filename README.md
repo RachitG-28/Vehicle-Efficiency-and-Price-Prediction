@@ -134,3 +134,13 @@ B.Tech CSE | Aspiring Data Analyst & ADAS Engineer
 ## ⭐ Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
+
+---
+
+## Updated UI
+
+<img width="1917" height="876" alt="Screenshot 2026-08-12 014757" src="https://github.com/user-attachments/assets/74fae1ca-074b-449a-bf0a-56f1fc35bc08" />
+<img width="1917" height="856" alt="Screenshot 2026-08-12 014805" src="https://github.com/user-attachments/assets/2ad03790-c9a2-4cd9-9d50-8e95c2ca1060" />
+
+
+
